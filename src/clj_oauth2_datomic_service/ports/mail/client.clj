@@ -3,12 +3,9 @@
             [clj-http.client :as client]
             [clojure.data.json :as json]))
 
-;(defconfig mail-send-uri "http://my-mail-provider")
-;(defconfig mail-api-key "x4lfkfiijjd233")
-;(defconfig mail-token-sender "my-mail@mail.com")
-(defconfig mail-send-uri "https://api.sendgrid.com/v3/mail/send")
-(defconfig mail-api-key "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")
-(defconfig mail-token-sender "majorcluster.langrt.db@gmail.com")
+(defconfig mail-send-uri "http://my-mail-provider")
+(defconfig mail-api-key "x4lfkfiijjd233")
+(defconfig mail-token-sender "my-mail@mail.com")
 (defconfig mail-token-sender-name "clj-oauth2-datomic-service Team")
 
 (defonce default-client
