@@ -1,0 +1,84 @@
+(ns clj-oauth2-datomic-service.ports.datomic.schema)
+
+(defonce specs
+         [;!!USER!!
+          {:db/ident :user/username
+           :db/valueType :db.type/string
+           :db/cardinality :db.cardinality/one}
+          {:db/ident :user/id
+           :db/valueType :db.type/uuid
+           :db/cardinality :db.cardinality/one
+           :db/unique :db.unique/identity}
+          {:db/ident :user/password
+           :db/valueType :db.type/string
+           :db/cardinality :db.cardinality/one}
+          ;!!CLIENT!!
+          {:db/ident :client/name
+           :db/valueType :db.type/string
+           :db/cardinality :db.cardinality/one}
+          {:db/ident :client/id
+           :db/valueType :db.type/string
+           :db/cardinality :db.cardinality/one
+           :db/unique :db.unique/identity}
+          {:db/ident :client/secret
+           :db/valueType :db.type/string
+           :db/cardinality :db.cardinality/one}
+          {:db/ident :client/user
+           :db/valueType :db.type/ref
+           :db/cardinality :db.cardinality/one}
+          ;!!END-USER!!
+          {:db/ident :end-user/username
+           :db/valueType :db.type/string
+           :db/cardinality :db.cardinality/one}
+          {:db/ident :end-user/id
+           :db/valueType :db.type/uuid
+           :db/cardinality :db.cardinality/one
+           :db/unique :db.unique/identity}
+          {:db/ident :end-user/password
+           :db/valueType :db.type/string
+           :db/cardinality :db.cardinality/one}
+          {:db/ident :end-user/client
+           :db/valueType :db.type/ref
+           :db/cardinality :db.cardinality/one}
+          {:db/ident :end-user/roles
+           :db/valueType :db.type/ref
+           :db/cardinality :db.cardinality/many}
+          ;!!ROLE!!
+          {:db/ident :role/name
+           :db/valueType :db.type/string
+           :db/cardinality :db.cardinality/one}
+          {:db/ident :role/id
+           :db/valueType :db.type/uuid
+           :db/cardinality :db.cardinality/one
+           :db/unique :db.unique/identity}
+          {:db/ident :role/client
+           :db/valueType :db.type/ref
+           :db/cardinality :db.cardinality/one}
+          ;!!SCOPE!!
+          {:db/ident :scope/name
+           :db/valueType :db.type/string
+           :db/cardinality :db.cardinality/one}
+          {:db/ident :scope/id
+           :db/valueType :db.type/uuid
+           :db/cardinality :db.cardinality/one
+           :db/unique :db.unique/identity}
+          {:db/ident :scope/role
+           :db/valueType :db.type/ref
+           :db/cardinality :db.cardinality/one}
+          {:db/ident :scope/client
+           :db/valueType :db.type/ref
+           :db/cardinality :db.cardinality/one}
+          ;!!TOKEN!!
+          {:db/ident :token/id
+           :db/valueType :db.type/string
+           :db/cardinality :db.cardinality/one
+           :db/unique :db.unique/identity}
+          {:db/ident :token/entity-id
+           :db/valueType :db.type/uuid
+           :db/cardinality :db.cardinality/one}
+          {:db/ident :token/entity-type
+           :db/valueType :db.type/keyword
+           :db/cardinality :db.cardinality/one}
+          {:db/ident :token/token-type
+           :db/valueType :db.type/keyword
+           :db/cardinality :db.cardinality/one}])

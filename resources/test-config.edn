@@ -1,0 +1,17 @@
+{
+ ;clj-oauth2-datomic-service.adapters.encrypt/secret #config/env "CLJ_OAUTH2_ENCRYPT_SECRET"
+ clj-oauth2-datomic-service.adapters.encrypt/secret         "my-epic-secret"
+ clj-oauth2-datomic-service.ports.datomic.core/db-host      "datomic:mem:/"
+ clj-oauth2-datomic-service.ports.datomic.core/db-name      "clj-oauth2-datomic-service"
+ ;clj-oauth2-datomic-service.ports.mail.client/mail-send-uri "https://api.sendgrid.com/v3/mail/send"
+ ;clj-oauth2-datomic-service.ports.mail.client/mail-api-key #config/env "CLJ_OAUTH2_MAIL_API_KEY"
+ ;clj-oauth2-datomic-service.ports.mail.client/mail-token-sender "mymail@mail.com"
+ ;clj-oauth2-datomic-service.ports.mail.client/mail-token-sender-name "clj-oauth2-datomic-service Team"
+ clj-oauth2-datomic-service.ports.mail.client/mail-send-uri "https://catfact.ninja/fact"
+ clj-oauth2-datomic-service.ports.mail.client/mail-api-key "CLJ_OAUTH2_MAIL_API_KEY"
+ ;clj-oauth2-datomic-service.ports.http.routes.interceptors/root-username #config/env "CLJ_OAUTH2_ROOT_USERNAME"
+ ;clj-oauth2-datomic-service.ports.http.routes.interceptors/root-pwd #config/env "CLJ_OAUTH2_ROOT_PWD"
+ clj-oauth2-datomic-service.ports.http.routes.interceptors/root-username "Aladdin"
+ clj-oauth2-datomic-service.ports.http.routes.interceptors/root-pwd "open sesame"
+ clj-oauth2-datomic-service.configs/env                     "test"
+ }
